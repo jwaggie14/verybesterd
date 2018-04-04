@@ -5,6 +5,8 @@ class Venue < ApplicationRecord
 
   # Validations
 
+  validates :venue, :uniqueness => { :message => "Venue already exists." }
+
   validates :venue, :presence => { :message => "Name can't be blank." }
 
 end
