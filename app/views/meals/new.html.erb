@@ -42,7 +42,7 @@
           Neighborhood
         </label>
 
-        <input type="text" id="neighborhood_id" name="neighborhood_id" placeholder="Neighborhood" class="form-control" value="<%= @meal.neighborhood_id %>">
+        <%= select_tag(:neighborhood_id, options_from_collection_for_select(Neighborhood.all, :id, :hood, @meal.neighborhood_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
