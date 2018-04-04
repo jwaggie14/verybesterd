@@ -26,3 +26,96 @@
     </div>
   </div>
 </div>
+
+<!-- A Dish has many meals -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Meals
+      </li>
+
+      <% @dish.meals.each do |meal| %>
+        <li class="list-group-item">
+          <a href="/meals/<%= meal.id %>">
+            <%= meal.dish_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/meals/<%= meal.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/meals/<%= meal.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_meal/<%= meal.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Dish has many venues -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Venues
+      </li>
+
+      <% @dish.venues.each do |venue| %>
+        <li class="list-group-item">
+          <a href="/venues/<%= venue.id %>">
+            <%= venue.venue %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/venues/<%= venue.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_venue/<%= venue.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Dish has many neighborhoods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Neighborhoods
+      </li>
+
+      <% @dish.neighborhoods.each do |neighborhood| %>
+        <li class="list-group-item">
+          <a href="/neighborhoods/<%= neighborhood.id %>">
+            <%= neighborhood.hood %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/neighborhoods/<%= neighborhood.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/neighborhoods/<%= neighborhood.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_neighborhood/<%= neighborhood.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
