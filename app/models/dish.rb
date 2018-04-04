@@ -6,6 +6,10 @@ class Dish < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :neighborhoods,
+             :through => :meals,
+             :source => :neighborhood
+
   has_many   :venues,
              :through => :meals,
              :source => :venue
