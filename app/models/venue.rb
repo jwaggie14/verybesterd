@@ -5,4 +5,6 @@ class Venue < ApplicationRecord
 
   # Validations
 
+  validates :venue, :presence => { :message => "Name can't be blank." }
+
 end
