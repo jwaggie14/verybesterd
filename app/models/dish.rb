@@ -6,6 +6,10 @@ class Dish < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :venues,
+             :through => :meals,
+             :source => :venue
+
   # Validations
 
   validates :dishes, :uniqueness => { :message => "This dish already exists." }

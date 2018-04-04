@@ -6,6 +6,10 @@ class Venue < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :dishes,
+             :through => :meals,
+             :source => :dish
+
   # Validations
 
   validates :venue, :uniqueness => { :message => "Venue already exists." }
